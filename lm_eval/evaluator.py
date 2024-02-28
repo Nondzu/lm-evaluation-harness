@@ -53,6 +53,7 @@ def simple_evaluate(
     decontamination_ngrams_path=None,
     write_out: bool = False,
     log_samples: bool = True,
+    chat_template: bool = False,
     gen_kwargs: str = None,
     task_manager: TaskManager = None,
     verbosity: str = "INFO",
@@ -159,6 +160,8 @@ def simple_evaluate(
                     "batch_size": batch_size,
                     "max_batch_size": max_batch_size,
                     "device": device,
+                    "use_chat_template": chat_template,
+
                 },
             )
 
@@ -169,6 +172,7 @@ def simple_evaluate(
                     "batch_size": batch_size,
                     "max_batch_size": max_batch_size,
                     "device": device,
+                    "use_chat_template": chat_template,
                 },
             )
     else:
