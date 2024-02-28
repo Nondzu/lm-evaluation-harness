@@ -219,6 +219,8 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
     if args.wandb_args:
         wandb_logger = WandbLogger(args)
 
+    model_name = args.model_args.split("/")[-1]
+    print(f"p Model name: {model_name}")
     eval_logger = utils.eval_logger
     eval_logger.setLevel(getattr(logging, f"{args.verbosity}"))
     eval_logger.info(f"Verbosity set to {args.verbosity}")
@@ -353,9 +355,9 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
             output_path_file.open("w", encoding="utf-8").write(dumped)
 
             if args.log_samples:
-                for task_name, config in results["configs"].items():
+                for task_name, config in results["configs"].items():                  
                     output_name = "{}_{}".format(
-                        re.sub("/|=", "__", args.model_args), task_name
+                        re.sub("/|=", "__", model_name), task_name
                     )
                     filename = path.joinpath(f"{output_name}.jsonl")
                     samples_dumped = json.dumps(
