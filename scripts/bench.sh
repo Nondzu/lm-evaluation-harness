@@ -16,7 +16,7 @@ export WANDB_ENTITY="speakleash"
 
 # Check if user provided model name
 if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 "
+    echo "Usage: $0 model_name"
     exit 1
 fi
 
