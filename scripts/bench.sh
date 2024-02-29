@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This is example of benchmark script for running lm_eval
+
 MODEL_NAME=$1
 BATCH_SIZE=4
 TASKS=polish
