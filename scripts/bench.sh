@@ -8,11 +8,11 @@ TASKS=polish
 NUM_FEWSHOT=0
 DEVICE=cuda
 VERBOSITY=DEBUG
-WB_PROJECT=lm-eval-harness-test # leave empty to disable wandb
+WB_PROJECT=nondzu-lm-eval-v1 # leave empty to disable wandb
 
 export NUMEXPR_MAX_THREADS=32
 export CUDA_VISIBLE_DEVICES=0
-export WANDB_ENTITY="speakleash"
+export WANDB_ENTITY="nondzu"
 
 # Check if user provided model name
 if [ "$#" -ne 1 ]; then
